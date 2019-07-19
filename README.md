@@ -26,13 +26,23 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] What is React JS and what problems does it try and solve? Support your answer with concepts introduced in class and from your personal research on the web.
 
+React JS is a library that organizes and adds functionality to the usual HTML-CSS-JS trifecta. It uses a virtual DOM for speed and state management for safety. `useState` for example, hooks into the state management system, which tries to control the chaos that happens when values are changing in lots of different places in an application at once.
+
 - [ ] What does it mean to _think_ in react?
+
+There's a certain prescriptive workflow and design philosophy behind React. The idea is to break a page down into a hierarchical structure, and have information only travel down the tree. If a child wants to send data to its parent, it needs to receive a callback function.
 
 - [ ] Describe state.
 
+State in general is the way that a thing is at a given time. A thing has some range of possible states that it can change between, and often in programming the number of states and paths between them is extremely huge and difficult to reason about. React uses an explicit and centralized system for state, where variables are "owned" at particular places in the hierarchy and manipulating state has to follow certain rules to keep things from getting out of control.
+
 - [ ] Describe props.
 
+Props is an object i.e. a set of named values that is passed to a node on the tree in React's hierarchy. The syntax and ritual used are a bit odd, but essentially it's just like a regular function call, but where all parameters must be named.
+
 - [ ] What are side effects, and how do you sync effects in a React component to state or prop changes?
+
+Side effects are changes in the state of the world where causality passes over the border of some scope, generally the program you're writing. If you modify the outside world, or if the outside world modifies you, that's a side effect. React places side effects into `useEffect`, where you can use setters to modify the internal state of your program.
 
 ## Project Set Up
 
@@ -60,7 +70,7 @@ Follow these steps for completing your project:
 
 Your finished project must include all of the following requirements:
 
-- [ ] Fetch a list of Star Wars characters from the [Star Wars API (or SWAPI)](https://swapi.co/) and render them to the screen. 
+- [ ] Fetch a list of Star Wars characters from the [Star Wars API (or SWAPI)](https://swapi.co/) and render them to the screen.
 - [ ] Follow the documentation to learn how to fetch a list of "people". However, don't spend _too_ long on this. Here is a link for you to follow if you've looked around the docs for about 15 minutes or so and haven't found where to go - [Secret Link to Awesomeness 🤫](https://swapi.co/documentation#people).
 - [ ] Set the data you fetch to state.
 - [ ] Map over the list and render a component for each character on the page.
