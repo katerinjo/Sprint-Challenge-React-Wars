@@ -41,7 +41,6 @@ const App = () => {
     return {
       header: raw.name,
       description: [
-        <p>Species: STUB</p>,
         <p>Gender: {raw.gender}</p>,
         <p>Born: {raw.birth_year}</p>,
         <p>Mass: {raw.mass}</p>
