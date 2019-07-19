@@ -1,5 +1,7 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import { Card } from "semantic-ui-react";
+import 'semantic-ui-css/semantic.min.css';
+import "./App.css";
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
