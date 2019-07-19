@@ -11,9 +11,33 @@ const App = () => {
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
 
+  const stubItems = [
+    {
+      header: "stub1",
+      meta: "stub2",
+      description: "stub3"
+    },
+    {
+      header: "stub4",
+      meta: "stub5",
+      description: "stub6"
+    },
+    {
+      header: "stub7",
+      meta: "stub8",
+      description: "stub9"
+    },
+    {
+      header: "stubA",
+      meta: "stubB",
+      description: "stubC"
+    }
+  ];
+
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
+      <Card.Group centered itemsPerRow={3} items={stubItems} />
     </div>
   );
 }
