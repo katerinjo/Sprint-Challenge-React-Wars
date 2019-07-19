@@ -40,7 +40,12 @@ const App = () => {
   function formatPerson(raw) {
     return {
       header: raw.name,
-      description: `gender: ${raw.gender}`
+      description: [
+        <p>Species: STUB</p>,
+        <p>Gender: {raw.gender}</p>,
+        <p>Born: {raw.birth_year}</p>,
+        <p>Mass: {raw.mass}</p>
+      ]
     };
   }
 
@@ -48,9 +53,6 @@ const App = () => {
     axios
       .get("https://swapi.co/api/people/")
       .then(resp => {
-        // resp.data.results.forEach(person => {
-        //   setPeople(people.concat(formatPerson(person)));
-        // });
         setPeople(resp.data.results.map(formatPerson));
       })
       .catch(console.log);
