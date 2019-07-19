@@ -37,17 +37,29 @@ const App = () => {
     }
   ];
 
+  function formatPerson(raw) {
+    return {
+      header: raw.name,
+      description: `gender: ${raw.gender}`
+    };
+  }
+
   useEffect(() => {
     axios
       .get("https://swapi.co/api/people/")
-      .then(console.log)
+      .then(resp => {
+        // resp.data.results.forEach(person => {
+        //   setPeople(people.concat(formatPerson(person)));
+        // });
+        setPeople(resp.data.results.map(formatPerson));
+      })
       .catch(console.log);
   }, []);
 
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
-      <Card.Group centered items={stubItems} />
+      <Card.Group centered items={people} />
     </div>
   );
 }
